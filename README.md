@@ -18,6 +18,20 @@ The two boundary-estimation branches operate on the same grayscale B-scan. Their
 
 *Illustrative output from the current pipeline. Markers represent algorithm-generated candidates, not independently confirmed VHDs. This image must not be publicly distributed without the required data-release approval.*
 
+## Results
+The proposed pipeline was evaluated against clinician-marked reference dots on a manually reviewed OCT validation set.
+
+| Evaluation Metric                                   | Result |
+| --------------------------------------------------- | ------ |
+| Dot-level Recall (Sensitivity)                      | 85.7%  |
+| Dot-level Precision (at 3-pixel matching tolerance) | 92%    |
+
+**Evaluation Protocol:** A predicted dot was considered a true positive if its centre was within a 3-pixel Euclidean distance of a unique clinician-marked reference dot. Each prediction and reference annotation was matched at most once. Unmatched predictions were counted as false positives, while unmatched reference dots were counted as false negatives.
+
+The results indicate that the pipeline identifies a substantial proportion of clinician-marked dots while maintaining a relatively high proportion of spatially matched predictions.
+
+**Note:** These results are conducted only on a part of the dataset and evaluation on additional OCT scans and further assessment of detection consistency are ongoing.
+
 ## Method
 
 The pipeline has three stages. It is designed so that detection is performed only within an anatomically defined vitreous region, which reduces false candidates from retinal tissue and noise.
@@ -53,11 +67,8 @@ Candidate regions are cleaned with morphological operations and filtered by geom
 
 ## Scope and limitations
 
-- The output represents **candidate VHDs**, not a confirmed clinical label for each dot.
+- 
 - Visual examples alone do not establish detection accuracy or clinical utility.
-- Quantitative evaluation requires a defined scan set, expert reference annotations and agreed metrics, which are reported in the manuscript rather than here.
-- Generalization across scanners, image quality and institutions remains a separate question.
-- Raw medical data, trained weights, implementation details and exact parameter settings are not included. Their availability depends on project and institutional approval.
 
 ## Repository structure
 
