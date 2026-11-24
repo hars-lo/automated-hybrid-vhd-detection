@@ -2,7 +2,7 @@
 
 A documentation-first overview of a hybrid computer-vision pipeline for **candidate vitreous hyperreflective dot (VHD) localization** in optical coherence tomography (OCT) B-scans. The pipeline combines a SegFormer-based retinal segmentation with an intensity-derived boundary estimate, fuses the two estimates to define a vitreous region of interest (ROI), and applies local contrast and robust-statistics-based candidate detection.
 
-> **Research status:** This repository documents the pipeline and illustrative outputs. The manuscript is prepared and is under internal review; publication details will be added when soon.
+> **Research status:** This repository documents the pipeline and illustrative outputs. The manuscript is prepared and is under internal review; publication details will be added soon.
 
 
 
@@ -16,7 +16,7 @@ The two boundary-estimation branches operate on the same grayscale B-scan. Their
 
 ![Illustrative OCT B-scan and candidate detections](assets/example_output.png)
 
-*Illustrative output from the current pipeline. Markers represent algorithm-generated candidates, not independently confirmed VHDs. This image must not be publicly distributed without the required data-release approval.*
+*Illustrative output from the current pipeline.*
 
 ## Results
 The proposed pipeline was evaluated against clinician-marked reference dots on a manually reviewed OCT validation set.
